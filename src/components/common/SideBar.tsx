@@ -1,7 +1,7 @@
 import { Box, Drawer } from '@mui/material'
 import React from 'react'
 
-const SideBar = () => {
+const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransitionEnd}:{drawerWidth: number, mobileOpen: boolean, handleDrawerClose: () => void,  handleDrawerTransitionEnd: () => void}) => {
   return (
           <Box
           component="nav"

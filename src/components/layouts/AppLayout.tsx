@@ -99,7 +99,12 @@ export default function AppLayout() {
       </AppBar>
 
         {/* サイドバー */}
-        <SideBar />
+        <SideBar
+          drawerWidth={drawerWidth}
+          mobileOpen={mobileOpen}
+          handleDrawerClose={handleDrawerClose}
+          handleDrawerTransitionEnd={handleDrawerTransitionEnd}
+        />
 
       {/* メインコンテンツ */}
       <Box
