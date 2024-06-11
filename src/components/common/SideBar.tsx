@@ -10,6 +10,14 @@ interface SidebarProps {
     handleDrawerTransitionEnd: () => void
 }
 
+// typeの方が定義できる型が多い
+// type SidebarProps = {
+//     drawerWidth: number,
+//     mobileOpen: boolean,
+//     handleDrawerClose: () => void,
+//     handleDrawerTransitionEnd: () => void
+// }
+
 const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransitionEnd}:SidebarProps) => {
     const drawer = (
         <div>
