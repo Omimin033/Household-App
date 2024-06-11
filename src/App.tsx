@@ -9,9 +9,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/report" element={<Report />}/>
-        <Route path="*" element={<NoMatch />}/>
+        <Route path="/" element={AppLayout />}>
+          <Route index element={<Home />}/>
+          <Route path="/report" element={<Report />}/>
+          <Route path="*" element={<NoMatch />}/>
+        </Route>
       </Routes>
     </Router>
   );
