@@ -2,7 +2,7 @@ import React from 'react'
 
 const NoMatch = () => {
   return (
-    <div>このページはありません</div>
+    <div>このページはありません。</div>
   )
 }
 
