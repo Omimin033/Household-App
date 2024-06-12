@@ -2,6 +2,8 @@ import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, Lis
 import React from 'react'
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
 
 interface SidebarProps {
     drawerWidth: number,
@@ -18,7 +20,19 @@ interface SidebarProps {
 //     handleDrawerTransitionEnd: () => void
 // }
 
+interface menuItem {
+    text: string,
+    path: string,
+    icon: React.ComponentType,
+}
+
 const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransitionEnd}:SidebarProps) => {
+    
+    const MenuItems:menuItem[] = [
+        {text: "Home", path: "/", icon: HomeIcon}
+        {text: "Report", path: "/report", icon: EqualizerIcon}
+    ]
+
     const drawer = (
         <div>
           <Toolbar />
