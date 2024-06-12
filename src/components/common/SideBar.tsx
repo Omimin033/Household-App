@@ -34,24 +34,27 @@ const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransi
     ]
 
     const drawer = (
-        <div>
-          <Toolbar />
-          <Divider />
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-        </div>
-      );
+      <div>
+        <Toolbar />
+        <Divider />
+        <List>
+          {MenuItems.map((item, index) => (
+              <NavLink to={item.path}>
+                  <ListItem key={index} disablePadding>
+                      <ListItemButton>
+                          <ListItemIcon>
+                              {/*index % 2 === 0 ? <InboxIcon /> : <MailIcon />*/}
+                              <item.icon />
+                          </ListItemIcon>
+                          <ListItemText primary={item.text} />
+                      </ListItemButton>
+                  </ListItem>
+              </NavLink>
+          ))}
+        </List>
+        <Divider />
+      </div>
+    );
   
     return (
           <Box
