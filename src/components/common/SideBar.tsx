@@ -1,5 +1,5 @@
 import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import HomeIcon from '@mui/icons-material/Home';
@@ -27,6 +27,16 @@ interface menuItem {
     text: string,
     path: string,
     icon: React.ComponentType,
+}
+
+const baseLinkStyle :CSSProperties = {
+  textDecoration: "none",
+  color: "inherit",
+  display: "block"
+}
+
+const activeLinkStyle:CSSProperties = {
+  backgroundColor: "rgba(0, 0, 0, 0.08)"
 }
 
 const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransitionEnd}:SidebarProps) => {
