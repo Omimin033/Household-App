@@ -46,13 +46,26 @@ const SideBar = ({drawerWidth, mobileOpen, handleDrawerClose, handleDrawerTransi
         {text: "Report", path: "/report", icon: EqualizerIcon},
     ]
 
+    const baseLinkStyle:CSSProperties = {
+      textDecoration: "none",
+      color: "inherit",
+      display: "block"
+    }
+
+    const activeLinkStyle:CSSProperties = {
+      backgroundColor: "rgba(0, 0, 0, 0.08)"
+    }
+
     const drawer = (
       <div>
         <Toolbar />
         <Divider />
         <List>
           {MenuItems.map((item, index) => (
-              <NavLink to={item.path}>
+              <NavLink to={item.path} style={({isActive}) => {
+                console.log("選択されたメニューは",item.text, isActive)
+                return {color: "red"}
+              }}>
                   <ListItem key={index} disablePadding>
                       <ListItemButton>
                           <ListItemIcon>
